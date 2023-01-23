@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person profile</title>
+</head>
+<body>
+<h2>All phone numbers of person</h2>
+<br>
+<br>
+<table>
+    <tr>
+        <th>Person id</th>
+        <th>Number</th>
+
+    </tr>
+    <tr th:each="p : ${personsPhones}">
+        <td class="align-middle" th:text="${p.person.personId}"></td>
+        <td class="align-middle" th:text="${p.phoneNumber}"></td>
+    </tr>
+</table>
+<a th:href="@{/}">Back</a>
+<a th:href="@{/addNumber/{id}(id=${personsPhones.})}" th:object="personsPhones">Add new number</a>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>All persons. Main page </h2>
+<br>
+<br>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    <tr th:each="c : ${allPersons}">
+        <td class="align-middle" th:text="${c.personId}"></td>
+        <td class="align-middle" th:text="${c.firstName}"></td>
+        <td class="align-middle" th:text="${c.lastName}"></td>
+
+        <td><a th:href="@{/edit/{id}(id=${c.personId})}">Edit</a></td>
+        <td><a th:href="@{/delete/{id}(id=${c.personId})}">Delete</a></td>
+        <td><a th:href="@{/person/phones/{id}(id=${c.personId})}">Show numbers</a></td>
+        <td><a th:href="@{/addNumber/{id}(id=${c.personId})}">Add new number</a></td>
+    </tr>
+</table>
+<br>
+<br>
+<a href="/new"> Create new contact</a>
+<br>
+<br>
+<!--<a href="/addNumber">Add new number</a>-->
+<a href="/book">Show all numbers</a>
+</body>
+</html>

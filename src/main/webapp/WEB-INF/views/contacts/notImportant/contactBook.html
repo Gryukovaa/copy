@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>List of persons</h2>
+<table>
+    <tr>
+        <!--<th>ID</th>-->
+        <th>Number</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+
+    </tr>
+    <tr th:each="p : ${allContacts}">
+       <!-- <td class="align-middle" th:text="${p.person.personId}"></td>-->
+        <td class="align-middle" th:text="${p.phoneNumber}"></td>
+        <td class="align-middle" th:text="${p.person.firstName}"></td>
+        <td class="align-middle" th:text="${p.person.lastName}"></td>
+        <!--<td><a th:href="@{/person/phones/{id}(id=${p.person.personId})}">Show numbers</a></td>
+        <td><a th:href="@{/edit/{id}(id=${p.person.personId})}">Edit</a></td>
+
+        <td><a th:href="@{/delete/{id}(id=${p.person.personId})}">Delete</a></td>-->
+    </tr>
+</table>
+<a href="/">Back</a>
+
+</body>
+</html>

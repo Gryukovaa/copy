@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact page</title>
+</head>
+<body>
+
+
+<br>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Phone number</th>
+    </tr>
+    <tr>
+        <td><span th:text="${selectedContact.contact.contact_id}">Id</span></td>
+        <td><span th:text="${selectedContact.contact.f}">Id</span></td>
+        <td><span th:text="${selectedContact.contact.contact_id}">Id</span></td>
+        <td><span th:text="${selectedContact.contact.contact_id}">Id</span></td>
+        <td><a th:href="@{/users/edit/{id}(id=${key.id})}">Edit</a></td>
+        <td><a th:href="@{/users/delete/{id}(id=${key.id})}">Delete</a></td>
+    </tr>
+</table>
+</body>
+</html>
